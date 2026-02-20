@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Home, Archive, Compass, MessageCircle, BookOpen, X, Menu, Globe } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { languageLabels, type Language } from "@/i18n/translations";
+import { useSmokeClick, SmokeHoverWrap } from "./SmokeEffect";
 
 type Page = "dashboard" | "humidor" | "discover" | "journal" | "concierge";
 
@@ -24,6 +25,7 @@ const langs: Language[] = ["en", "tr", "es"];
 export function AppNav({ currentPage, onNavigate }: NavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { containerRef: smokeRef, triggerSmoke } = useSmokeClick();
 
   const LanguageSwitcher = () => (
     <div>
@@ -51,7 +53,7 @@ export function AppNav({ currentPage, onNavigate }: NavProps) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col w-64 min-h-screen bg-sidebar border-r border-sidebar-border py-8 px-6">
+      <aside ref={smokeRef} className="hidden md:flex flex-col w-64 min-h-screen bg-sidebar border-r border-sidebar-border py-8 px-6 relative overflow-hidden">
         <div className="mb-10">
           <div className="divider-gold mb-6" />
           <p className="text-xs font-ui tracking-[0.25em] uppercase text-gold mb-1">{t("nav.premium" as any)}</p>
@@ -64,18 +66,20 @@ export function AppNav({ currentPage, onNavigate }: NavProps) {
             const Icon = navIcons[id];
             const active = currentPage === id;
             return (
-              <button
-                key={id}
-                onClick={() => onNavigate(id)}
-                className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-ui tracking-wide transition-all duration-200 text-left ${
-                  active
-                    ? "text-gold border-l-2 border-gold bg-gold/5 pl-[14px]"
-                    : "text-sidebar-foreground hover:text-cream hover:bg-sidebar-accent border-l-2 border-transparent"
-                }`}
-              >
-                <Icon size={16} strokeWidth={active ? 2 : 1.5} />
-                <span className={active ? "font-medium" : ""}>{t(navKeys[id] as any)}</span>
-              </button>
+              <SmokeHoverWrap>
+                <button
+                  key={id}
+                  onClick={(e) => { triggerSmoke(e); onNavigate(id); }}
+                  className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-ui tracking-wide transition-all duration-200 text-left ${
+                    active
+                      ? "text-gold border-l-2 border-gold bg-gold/5 pl-[14px]"
+                      : "text-sidebar-foreground hover:text-cream hover:bg-sidebar-accent border-l-2 border-transparent"
+                  }`}
+                >
+                  <Icon size={16} strokeWidth={active ? 2 : 1.5} />
+                  <span className={active ? "font-medium" : ""}>{t(navKeys[id] as any)}</span>
+                </button>
+              </SmokeHoverWrap>
             );
           })}
         </nav>

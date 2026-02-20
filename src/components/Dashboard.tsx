@@ -4,6 +4,7 @@ import type { UserLevel } from "./OnboardingQuiz";
 import type { Page } from "./AppNav";
 import heroCigars from "@/assets/hero-cigars.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { SmokeHoverWrap } from "./SmokeEffect";
 
 interface DashboardProps {
   level: UserLevel;
@@ -82,11 +83,13 @@ export function Dashboard({ level, onNavigate, humidorCount }: DashboardProps) {
           {quickActions.map((action) => {
             const Icon = action.icon;
             return (
-              <button key={action.page} onClick={() => onNavigate(action.page)} className="group gradient-card border border-border hover:border-gold/40 p-5 text-left transition-all duration-300 hover:shadow-gold">
-                <Icon size={20} className="text-gold mb-3 group-hover:scale-110 transition-transform duration-200" />
-                <p className="font-ui font-medium text-cream text-sm">{action.label}</p>
-                <p className="font-serif-body text-muted-foreground text-sm mt-1">{action.description}</p>
-              </button>
+              <SmokeHoverWrap key={action.page} intensity="medium">
+                <button onClick={() => onNavigate(action.page)} className="group gradient-card border border-border hover:border-gold/40 p-5 text-left transition-all duration-300 hover:shadow-gold w-full">
+                  <Icon size={20} className="text-gold mb-3 group-hover:scale-110 transition-transform duration-200" />
+                  <p className="font-ui font-medium text-cream text-sm">{action.label}</p>
+                  <p className="font-serif-body text-muted-foreground text-sm mt-1">{action.description}</p>
+                </button>
+              </SmokeHoverWrap>
             );
           })}
         </div>
@@ -102,19 +105,21 @@ export function Dashboard({ level, onNavigate, humidorCount }: DashboardProps) {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {featuredCigars.map((cigar, i) => (
-            <div key={i} className="gradient-card border border-border hover:border-gold/30 p-4 transition-all duration-300 cursor-pointer group">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <p className="font-display text-cream font-semibold text-sm group-hover:text-gold transition-colors">{cigar.name}</p>
-                  <p className="text-xs font-ui text-muted-foreground mt-0.5">{cigar.origin} · {cigar.strength}</p>
+            <SmokeHoverWrap key={i}>
+              <div className="gradient-card border border-border hover:border-gold/30 p-4 transition-all duration-300 cursor-pointer group">
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <p className="font-display text-cream font-semibold text-sm group-hover:text-gold transition-colors">{cigar.name}</p>
+                    <p className="text-xs font-ui text-muted-foreground mt-0.5">{cigar.origin} · {cigar.strength}</p>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Star size={10} className="text-gold fill-gold" />
+                    <span className="text-xs font-ui font-bold text-gold">{cigar.rating}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1">
-                  <Star size={10} className="text-gold fill-gold" />
-                  <span className="text-xs font-ui font-bold text-gold">{cigar.rating}</span>
-                </div>
+                <p className="text-xs font-serif-body text-muted-foreground italic">{cigar.notes}</p>
               </div>
-              <p className="text-xs font-serif-body text-muted-foreground italic">{cigar.notes}</p>
-            </div>
+            </SmokeHoverWrap>
           ))}
         </div>
       </motion.div>

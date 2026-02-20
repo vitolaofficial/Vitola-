@@ -185,6 +185,61 @@
   100% { background-position: 200% center; }
 }
 
+/* Smoke particle burst on click */
+.smoke-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(43 72% 52% / 0.5), hsl(43 72% 52% / 0.1));
+  pointer-events: none;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes smoke-rise {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(2.5);
+    filter: blur(4px);
+  }
+}
+
+/* Hover smoke wisp for cards/navlinks */
+.smoke-hover-wrap {
+  position: relative;
+  overflow: visible;
+}
+.smoke-hover-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 30px;
+  height: 40px;
+  transform: translateX(-50%) translateY(0);
+  background: radial-gradient(ellipse, hsl(43 72% 52% / 0.12), transparent 70%);
+  filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.smoke-hover-wrap:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+.smoke-hover-medium::after {
+  width: 50px;
+  height: 60px;
+}
+.smoke-hover-medium:hover::after {
+  opacity: 0.8;
+  transform: translateX(-50%) translateY(-16px);
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

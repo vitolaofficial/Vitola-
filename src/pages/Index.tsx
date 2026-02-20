@@ -6,6 +6,7 @@ import { Humidor, type CigarEntry } from "@/components/Humidor";
 import { Discover } from "@/components/Discover";
 import { Journal, type JournalEntry } from "@/components/Journal";
 import { Concierge } from "@/components/Concierge";
+import { PageTransition } from "@/components/PageTransition";
 
 const Index = () => {
   const [level, setLevel] = useState<UserLevel | null>(null);
@@ -26,17 +27,19 @@ const Index = () => {
       <AppNav currentPage={currentPage} onNavigate={setCurrentPage} />
 
       <main className="flex-1 md:overflow-y-auto pt-16 md:pt-0">
-        {currentPage === "dashboard" && (
-          <Dashboard level={level} onNavigate={setCurrentPage} humidorCount={cigars.length} />
-        )}
-        {currentPage === "humidor" && (
-          <Humidor cigars={cigars} onAdd={addCigar} onRemove={removeCigar} />
-        )}
-        {currentPage === "discover" && <Discover />}
-        {currentPage === "journal" && (
-          <Journal entries={journalEntries} cigars={cigars} onAdd={addJournalEntry} />
-        )}
-        {currentPage === "concierge" && <Concierge level={level} />}
+        <PageTransition pageKey={currentPage}>
+          {currentPage === "dashboard" && (
+            <Dashboard level={level} onNavigate={setCurrentPage} humidorCount={cigars.length} />
+          )}
+          {currentPage === "humidor" && (
+            <Humidor cigars={cigars} onAdd={addCigar} onRemove={removeCigar} />
+          )}
+          {currentPage === "discover" && <Discover />}
+          {currentPage === "journal" && (
+            <Journal entries={journalEntries} cigars={cigars} onAdd={addJournalEntry} />
+          )}
+          {currentPage === "concierge" && <Concierge level={level} />}
+        </PageTransition>
       </main>
     </div>
   );
