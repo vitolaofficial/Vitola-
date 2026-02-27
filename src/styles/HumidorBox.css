@@ -1,0 +1,455 @@
+/* HumidorBox Style - Premium 3D Effects */
+
+.cigar-stick-shadow {
+    position: absolute;
+    left: 2rem;
+    right: 0;
+    bottom: -4px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    filter: blur(4px);
+    border-radius: 9999px;
+    transform: scaleX(0.95);
+    transition: all 0.3s;
+    max-width: 160px;
+}
+
+.cigar-stick-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+    height: 26px;
+    z-index: 10;
+}
+
+.cigar-foot {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    z-index: 10;
+    position: relative;
+    width: 12px;
+    height: 22px;
+    background: linear-gradient(to right, #1a120f, var(--cigar-foot));
+    box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.cigar-foot-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    background-image: radial-gradient(circle at 30% 50%, transparent, rgba(0, 0, 0, 0.8));
+}
+
+.cigar-body {
+    position: relative;
+    transition: all 0.3s;
+    z-index: 10;
+    margin-left: -1px;
+    width: 130px;
+    height: 22px;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            var(--cigar-body) 10%,
+            rgba(255, 255, 255, 0.15) 25%,
+            var(--cigar-body) 45%,
+            rgba(0, 0, 0, 0.5) 85%,
+            rgba(0, 0, 0, 0.8) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cigar-veins {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    background-image: repeating-linear-gradient(75deg, transparent, transparent 15px, rgba(0, 0, 0, 0.4) 15px, rgba(0, 0, 0, 0.4) 16px, transparent 16px, transparent 25px, rgba(255, 255, 255, 0.1) 25px, rgba(255, 255, 255, 0.1) 26px);
+}
+
+.cigar-band {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -0.5rem;
+    transition: transform 0.3s;
+    width: 36px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--cigar-band) 0%, #fff 25%, var(--cigar-band) 50%, #594300 85%, #2e2200 100%);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+}
+
+.cigar-band-inner {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(circle at 30% 30%, var(--cigar-band), #2e2200);
+}
+
+.cigar-cap {
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    margin-left: -2px;
+    z-index: 10;
+    width: 20px;
+    height: 22px;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            var(--cigar-body) 10%,
+            rgba(255, 255, 255, 0.15) 25%,
+            var(--cigar-body) 45%,
+            rgba(0, 0, 0, 0.5) 85%,
+            rgba(0, 0, 0, 0.8) 100%);
+    box-shadow: inset -4px 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.cigar-glow-effect {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(200, 168, 75, 0.3);
+}
+
+/* Cigar Wrapper Themes */
+.wrapper-connecticut-shade {
+    --cigar-body: #C4956A;
+    --cigar-band: #D4A84B;
+    --cigar-foot: #E8D5B5;
+}
+
+.wrapper-claro {
+    --cigar-body: #C9A06C;
+    --cigar-band: #C8A24D;
+    --cigar-foot: #E0CAA8;
+}
+
+.wrapper-colorado-claro {
+    --cigar-body: #A07040;
+    --cigar-band: #D4A84B;
+    --cigar-foot: #C8A070;
+}
+
+.wrapper-colorado {
+    --cigar-body: #8B5E3C;
+    --cigar-band: #C8960A;
+    --cigar-foot: #A87D50;
+}
+
+.wrapper-colorado-maduro {
+    --cigar-body: #6B4226;
+    --cigar-band: #D4A84B;
+    --cigar-foot: #8B6340;
+}
+
+.wrapper-maduro {
+    --cigar-body: #4A2C17;
+    --cigar-band: #C8960A;
+    --cigar-foot: #6B4830;
+}
+
+.wrapper-oscuro {
+    --cigar-body: #2E1A0E;
+    --cigar-band: #D4A84B;
+    --cigar-foot: #4A3020;
+}
+
+.wrapper-candela {
+    --cigar-body: #6B8B4A;
+    --cigar-band: #C8A24D;
+    --cigar-foot: #8BA06A;
+}
+
+/* Humidor Frame */
+.humidor-wrapper-outer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    max-width: 760px;
+    perspective: 1800px;
+}
+
+.humidor-shadow-bottom {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 3rem;
+    right: 3rem;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    filter: blur(20px);
+    border-radius: 100%;
+}
+
+.humidor-shadow-front {
+    position: absolute;
+    bottom: -1rem;
+    left: 1rem;
+    right: 1rem;
+    height: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    filter: blur(8px);
+    border-radius: 100%;
+}
+
+.humidor-main-base {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: visible;
+    border: 1px solid #381605;
+    background: linear-gradient(145deg, #2a0f03 0%, #170701 100%);
+    padding: 18px;
+    box-shadow:
+        inset 0 2px 4px rgba(255, 255, 255, 0.05),
+        inset 0 -6px 15px rgba(0, 0, 0, 0.9),
+        0 25px 50px rgba(0, 0, 0, 0.7),
+        0 0 0 1px #000;
+}
+
+.humidor-wood-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    opacity: 0.4;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    background-image: radial-gradient(circle at 60% 40%, rgba(139, 69, 19, 0.4) 0%, transparent 70%), repeating-linear-gradient(35deg, transparent, transparent 15px, rgba(0, 0, 0, 0.3) 15px, rgba(0, 0, 0, 0.3) 30px);
+    filter: contrast(1.2) sepia(0.3);
+}
+
+.humidor-hinge-block {
+    width: 44px;
+    height: 12px;
+    background: linear-gradient(180deg, #1f1f1f, #000);
+    position: relative;
+    border-radius: 2px;
+}
+
+.humidor-hinge-cover {
+    position: absolute;
+    inset: 0;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #fcecae 0%, #d4a84b 30%, #a67c00 60%, #4a3700 90%, #d4a84b 100%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.9), inset 0 1px 2px rgba(255, 255, 255, 0.6), inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+    border: 1px solid #332200;
+}
+
+.humidor-hinge-rivet {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.humidor-lid-motion {
+    transform-origin: top center;
+    transform-style: preserve-3d;
+    z-index: 20;
+    position: relative;
+}
+
+.humidor-lid-glass {
+    position: relative;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(200, 168, 75, 0.02) 100%);
+    border: 2px solid rgba(212, 175, 55, 0.25);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    min-height: 45px;
+}
+
+.humidor-hygrometer-frame {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #d4a84b, #a67c00, #4a3700);
+    padding: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.humidor-hygrometer-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #262626, #000);
+}
+
+.humidor-hygrometer-ticks {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: conic-gradient(from 180deg, transparent 40%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.1) 60%, transparent 60%);
+}
+
+.hygrometer-needle {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%) rotate(15deg);
+    transform-origin: bottom;
+    width: 1.5px;
+    height: 16px;
+    z-index: 5;
+}
+
+.hygrometer-needle-inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #8b0000, #ff4d4d);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.hygrometer-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: hsl(var(--gold));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #a67c00;
+}
+
+.hygrometer-glass-shine {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.2), transparent);
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.humidor-interior-void {
+    position: relative;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #080402;
+    border: 2px solid #000;
+    border-top-width: 6px;
+    border-top-color: #140702;
+    min-height: 260px;
+    padding: 20px 24px;
+    box-shadow: inset 0 15px 40px rgba(0, 0, 0, 0.9), inset 0 0 25px rgba(0, 0, 0, 0.9);
+}
+
+.cedar-main-tray {
+    position: absolute;
+    inset: 14px;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, #8f5a34 0%, #61391e 100%);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-top: 3px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+}
+
+.cedar-texture-grain-1 {
+    position: absolute;
+    inset: 0;
+    opacity: 0.25;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    background-image: repeating-linear-gradient(2deg, transparent, transparent 2px, rgba(50, 20, 5, 0.3) 2px, rgba(50, 20, 5, 0.3) 4px);
+}
+
+.cedar-texture-grain-2 {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(88deg, transparent, transparent 60px, rgba(0, 0, 0, 0.4) 60px, rgba(0, 0, 0, 0.4) 62px);
+}
+
+.cedar-divider-slot {
+    width: 100%;
+    position: relative;
+    height: 8px;
+    background: linear-gradient(180deg, #422513, #241107);
+    box-shadow: 0 2px 3px rgba(255, 255, 255, 0.08), inset 0 3px 5px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+}
+
+.humidor-light-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    background: radial-gradient(ellipse at 50% 10%, #facc15 0%, #c5a059 20%, transparent 70%);
+}
+
+.humidor-closure-lock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 30px;
+    background: linear-gradient(180deg, #ffe082 0%, #d4a84b 30%, #a67c00 70%, #4a3700 100%);
+    border-radius: 4px 4px 12px 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.9), inset 0 2px 3px rgba(255, 255, 255, 0.6), inset 0 -2px 3px rgba(0, 0, 0, 0.6);
+    border: 1px solid #332200;
+}
+
+.lock-assembly-plate {
+    width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    border: 1px solid #856300;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #a67c00, #d4a84b);
+}
+
+.lock-key-void {
+    width: 8px;
+    height: 10px;
+    border-radius: 9999px;
+    background-color: #1a1a1a;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.lid-open-thickness {
+    height: 16px;
+    background: linear-gradient(180deg, #381605, #170701);
+    border-left: 2px solid rgba(212, 175, 55, 0.15);
+    border-right: 2px solid rgba(212, 175, 55, 0.15);
+    border-top: 1px solid rgba(0, 0, 0, 0.8);
+    transform: rotateX(90deg);
+    transform-origin: top center;
+    box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.9), 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+}

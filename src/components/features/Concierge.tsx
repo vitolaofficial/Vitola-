@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, Bot, User } from "lucide-react";
-import type { UserLevel } from "./OnboardingQuiz";
+import type { UserLevel, UserProfile } from "@/components/auth/OnboardingQuiz";
 import { useLanguage } from "@/i18n/LanguageContext";
+import type { TranslationKey } from "@/i18n/translations";
 
 interface Message {
   role: "user" | "assistant";
@@ -11,6 +12,7 @@ interface Message {
 
 interface ConciergeProps {
   level: UserLevel;
+  profile: UserProfile;
 }
 
 const suggestions: Record<UserLevel, string[]> = {
@@ -34,12 +36,12 @@ const suggestions: Record<UserLevel, string[]> = {
   ],
 };
 
-export function Concierge({ level }: ConciergeProps) {
+export function Concierge({ level, profile }: ConciergeProps) {
   const { t } = useLanguage();
-  const levelContext = t(`concierge.levelContext.${level}` as any);
+  const levelContext = t(`concierge.levelContext.${level}` as TranslationKey);
 
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: t("concierge.greeting" as any, { level: levelContext }) },
+    { role: "assistant", content: t("concierge.greeting" as TranslationKey, { level: levelContext }) },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -85,17 +87,25 @@ export function Concierge({ level }: ConciergeProps) {
   };
 
   return (
-    <div className="flex flex-col h-screen md:h-auto md:min-h-0" style={{ height: "calc(100vh - 0px)" }}>
-      <div className="p-6 md:p-10 pb-4 md:pb-6 flex-shrink-0">
+    <div className="relative flex flex-col h-[calc(100vh-80px)] md:h-[calc(100vh-40px)] max-w-5xl ml-0">
+      {/* Ambient effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -right-32 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute -bottom-32 -left-32 w-[300px] h-[300px] bg-gold/[0.02] rounded-full blur-[100px]" />
+      </div>
+
+      <div className="p-4 md:p-8 pb-3 md:pb-4 flex-shrink-0 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <p className="text-xs font-ui tracking-[0.2em] uppercase text-gold mb-2">{t("concierge.aiPowered" as any)}</p>
-          <h1 className="font-display text-4xl md:text-5xl text-cream font-bold mb-2">{t("concierge.title" as any)}</h1>
-          <p className="font-serif-body text-muted-foreground">{t("concierge.subtitle" as any)}</p>
+          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-16 h-px bg-gradient-to-r from-gold/40 to-transparent mb-4" />
+          <p className="text-xs font-ui tracking-[0.4em] uppercase text-gold/50 mb-2">{t("concierge.aiPowered" as TranslationKey)}</p>
+          <h1 className="font-display text-4xl md:text-5xl text-cream font-bold mb-3 text-gold-gradient">{t("concierge.title" as TranslationKey)}</h1>
+          <p className="font-serif-body text-cream/35">{t("concierge.subtitle" as TranslationKey)}</p>
           <div className="divider-gold mt-4" />
         </motion.div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-6 md:px-10 pb-4 space-y-4 min-h-0">
+      <div className="flex-1 overflow-y-auto px-4 md:px-8 pb-4 space-y-4 min-h-0">
         {messages.map((msg, i) => (
           <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
             className={`flex gap-3 ${msg.role === "user" ? "flex-row-reverse" : ""}`}>
@@ -112,12 +122,10 @@ export function Concierge({ level }: ConciergeProps) {
 
         {loading && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-3 items-center">
-            <div className="w-7 h-7 flex items-center justify-center border border-gold/40 bg-gold/10 text-gold"><Bot size={13} /></div>
-            <div className="gradient-card border border-border px-4 py-3">
-              <div className="flex gap-1.5">
-                {[0, 1, 2].map((i) => (
-                  <div key={i} className="w-1.5 h-1.5 bg-gold/60 rounded-full animate-bounce" style={{ animationDelay: `${i * 0.15}s` }} />
-                ))}
+            <div className="w-7 h-7 flex items-center justify-center border border-gold/40 bg-gold/10 text-gold animate-pulse-gold"><Bot size={13} /></div>
+            <div className="gradient-card border border-border">
+              <div className="typing-dots">
+                <span /><span /><span />
               </div>
             </div>
           </motion.div>
@@ -126,7 +134,7 @@ export function Concierge({ level }: ConciergeProps) {
       </div>
 
       {messages.length <= 2 && (
-        <div className="px-6 md:px-10 pb-3 flex gap-2 flex-wrap flex-shrink-0">
+        <div className="px-4 md:px-8 pb-3 flex gap-2 flex-wrap flex-shrink-0">
           {suggestions[level].map((s) => (
             <button key={s} onClick={() => handleSend(s)}
               className="text-xs font-ui px-3 py-1.5 border border-border text-muted-foreground hover:border-gold/40 hover:text-cream transition-all duration-200">
@@ -136,14 +144,14 @@ export function Concierge({ level }: ConciergeProps) {
         </div>
       )}
 
-      <div className="px-6 md:px-10 py-4 border-t border-border flex-shrink-0">
+      <div className="px-4 md:px-8 py-4 border-t border-white/[0.04] flex-shrink-0 relative z-10">
         <div className="flex gap-3">
           <input value={input} onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}
-            placeholder={t("concierge.placeholder" as any)}
-            className="flex-1 bg-input border border-border px-4 py-3 text-sm text-foreground font-ui placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors" />
-          <button onClick={() => handleSend()} disabled={!input.trim() || loading}
-            className="px-4 py-3 bg-gold text-mahogany hover:shadow-gold transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed">
+            placeholder={t("concierge.placeholder" as TranslationKey)}
+            className="flex-1 bg-white/[0.03] border border-white/[0.06] px-4 py-3 text-sm text-cream font-ui placeholder:text-cream/15 focus:outline-none focus:border-gold/25 transition-colors" />
+          <button onClick={() => handleSend()} disabled={!input.trim() || loading} title="Send message"
+            className="px-5 py-3 bg-gold text-[#0a0604] hover:shadow-[0_0_40px_rgba(197,160,89,0.2)] transition-all duration-500 disabled:opacity-40 disabled:cursor-not-allowed">
             <Send size={15} />
           </button>
         </div>

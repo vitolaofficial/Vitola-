@@ -1,0 +1,342 @@
+[
+  {
+    "id": "fs-1",
+    "name": "Macanudo Cafe Ascot",
+    "brand": "Macanudo",
+    "origin": "Dominican Republic",
+    "wrapper": "Connecticut Shade",
+    "strength": "Mild",
+    "size": "4.18 x 32",
+    "rating": 88,
+    "price": "$21.50",
+    "notes": "A smooth, mild classic with notes of sweet hay, cream, and a hint of vanilla.",
+    "description": "Macanudo Cafe is one of the world's most popular premium cigars. Wrapped in a silky Connecticut shade leaf, it delivers an incredibly smooth and mellow smoking experience perfect for any time of day.",
+    "tags": [
+      "Mild",
+      "Dominican",
+      "Beginner-Friendly"
+    ],
+    "pairings": [
+      "Morning Coffee",
+      "Wheat Beer",
+      "Chardonnay"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/mac/ci-mac-ascotn.jpg?_i=AB"
+  },
+  {
+    "id": "fs-2",
+    "name": "Rocky Patel Vintage 1999",
+    "brand": "Rocky Patel",
+    "origin": "Honduras",
+    "wrapper": "Connecticut Shade",
+    "strength": "Mild",
+    "size": "5.5 x 50",
+    "rating": 90,
+    "price": "$10.50",
+    "notes": "Creamy, nutty, and slightly buttery with a refined finish.",
+    "description": "Featuring a 7-year-old Connecticut wrapper, this Vintage 1999 blend is elegant and complex without overwhelming the palate. Excellent morning or afternoon smoke.",
+    "tags": [
+      "Premium",
+      "Mild"
+    ],
+    "pairings": [
+      "Cappuccino",
+      "Light Rum"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/rpj/ci-rpj-junct.jpg?_i=AB"
+  },
+  {
+    "id": "fs-3",
+    "name": "Baccarat Rothschild",
+    "brand": "Baccarat",
+    "origin": "Honduras",
+    "wrapper": "Connecticut Shade",
+    "strength": "Mild",
+    "size": "5.0 x 50",
+    "rating": 86,
+    "price": "$6.00",
+    "notes": "Sweetened cap, mild tobacco core with notes of sugar and cedar.",
+    "description": "Famous for its sweetened cap, Baccarat brings a unique sweetness to a mellow Honduran blend. A very approachable and consistent everyday cigar.",
+    "tags": [
+      "Mild",
+      "Beginner-Friendly"
+    ],
+    "pairings": [
+      "Sweet Tea",
+      "Cognac"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/ci-bac-rotn.jpg?_i=AB"
+  },
+  {
+    "id": "fs-4",
+    "name": "Arturo Fuente Hemingway Short Story",
+    "brand": "Arturo Fuente",
+    "origin": "Dominican Republic",
+    "wrapper": "Cameroon",
+    "strength": "Medium",
+    "size": "4.0 x 49",
+    "rating": 94,
+    "price": "$9.50",
+    "notes": "Rich cedar, leather, and surprisingly sweet baking spices.",
+    "description": "A beautifully crafted Perfecto. The Hemingway Short Story is legendary for its flawless construction and rich, medium-bodied Cameroon flavor profile.",
+    "tags": [
+      "Iconic",
+      "Premium",
+      "Dominican"
+    ],
+    "pairings": [
+      "Aged Rum",
+      "Espresso",
+      "Port Wine"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/af/CI-AF-HEAN-40-BOX_OPEN.jpg?_i=AB"
+  },
+  {
+    "id": "fs-5",
+    "name": "Romeo y Julieta 1875 Bully",
+    "brand": "Romeo y Julieta",
+    "origin": "Dominican Republic",
+    "wrapper": "Indonesian",
+    "strength": "Medium",
+    "size": "5.0 x 50",
+    "rating": 91,
+    "price": "$8.00",
+    "notes": "Cedar, toasted nuts, and a delicate floral finish.",
+    "description": "The 1875 Bully is a staple in humidors worldwide. It offers a classic, balanced, medium-bodied profile that never goes out of style.",
+    "tags": [
+      "Iconic",
+      "Dominican"
+    ],
+    "pairings": [
+      "Cabernet Sauvignon",
+      "Bourbon"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/roh/ci-roh-torn.jpg?_i=AB"
+  },
+  {
+    "id": "fs-6",
+    "name": "Acid Blondie",
+    "brand": "Acid",
+    "origin": "Nicaragua",
+    "wrapper": "Connecticut Shade",
+    "strength": "Mild",
+    "size": "4.0 x 38",
+    "rating": 87,
+    "price": "$7.20",
+    "notes": "Intensely aromatic, floral, honey, and herbal botanicals.",
+    "description": "Infused with a secret blend of botanicals and oils, Acid Blondie is a unique, sweet, and highly aromatic smoking experience unlike traditional cigars.",
+    "tags": [
+      "Mild",
+      "Nicaraguan"
+    ],
+    "pairings": [
+      "Gin & Tonic",
+      "Sparkling Water"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/aci/ci-aci-bkconn.jpg?_i=AB"
+  },
+  {
+    "id": "fs-7",
+    "name": "Famous Nicaraguan 3000",
+    "brand": "Famous Smoke",
+    "origin": "Nicaragua",
+    "wrapper": "Ecuadorian Habano",
+    "strength": "Full",
+    "size": "6.0 x 52",
+    "rating": 89,
+    "price": "$4.50",
+    "notes": "Earth, dark cocoa, robust pepper, and leather.",
+    "description": "A house brand favorite offering incredible value. This Nicaraguan puro delivers a rich, bold, and full-bodied experience at an everyday price.",
+    "tags": [
+      "Bold",
+      "Nicaraguan"
+    ],
+    "pairings": [
+      "Stout Beer",
+      "Strong Black Coffee"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/fsw/ci-fsw-robn.jpg?_i=AB"
+  },
+  {
+    "id": "fs-8",
+    "name": "Baccarat Churchill",
+    "brand": "Baccarat",
+    "origin": "Honduras",
+    "wrapper": "Connecticut Shade",
+    "strength": "Mild",
+    "size": "7.0 x 50",
+    "rating": 85,
+    "price": "$7.50",
+    "notes": "Sweet gum cap, mild tobacco, creamy finish.",
+    "description": "An extended version of the classic Baccarat blend. Perfect for a long, relaxing, mellow afternoon smoke with a touch of sweetness.",
+    "tags": [
+      "Mild"
+    ],
+    "pairings": [
+      "Iced Coffee",
+      "Cream Ale"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/bac/CI-BAC-CHUN-25-BOX.jpg?_i=AB"
+  },
+  {
+    "id": "fs-9",
+    "name": "Cohiba Behike 52",
+    "brand": "Cohiba",
+    "origin": "Cuba",
+    "wrapper": "Habano",
+    "strength": "Medium-Full",
+    "size": "4.7 x 52",
+    "rating": 97,
+    "price": "$125.00",
+    "notes": "Rich notes of cedar, leather, and creamy coffee with a floral aroma.",
+    "description": "The holy grail of Habanos. Behike 52 is made with rare 'medio tiempo' leaves, offering an unmatched depth of flavor and refinement.",
+    "tags": [
+      "Ultra-Premium",
+      "Cuban",
+      "Collector"
+    ],
+    "pairings": [
+      "Single Malt Scotch",
+      "Vintage Port"
+    ],
+    "image_url": "https://www.kindpng.com/picc/m/649-6491377_cohiba-behike-52-hd-png-download.png"
+  },
+  {
+    "id": "fs-10",
+    "name": "Padron 1964 Anniversary Natural",
+    "brand": "Padron",
+    "origin": "Nicaragua",
+    "wrapper": "Nicaraguan",
+    "strength": "Full",
+    "size": "5.0 x 50",
+    "rating": 95,
+    "price": "$18.50",
+    "notes": "Complex cocoa, coffee, and nutty sweetness with a spicy kick.",
+    "description": "A box-pressed masterpiece. Padron 1964 Anniversary Series is crafted from 4-year-old aged tobaccos for a smooth yet powerful smoke.",
+    "tags": [
+      "Award-Winning",
+      "Full",
+      "Nicaraguan"
+    ],
+    "pairings": [
+      "Bourbon",
+      "Dark Chocolate"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/pad/ci-pad-j64na.jpg?_i=AB"
+  },
+  {
+    "id": "fs-11",
+    "name": "My Father Le Bijou 1922 Torpedo",
+    "brand": "My Father",
+    "origin": "Nicaragua",
+    "wrapper": "Habano Oscuro",
+    "strength": "Full",
+    "size": "6.12 x 52",
+    "rating": 97,
+    "price": "$13.00",
+    "notes": "Bold notes of black pepper, chocolate, and roasted coffee.",
+    "description": "Named 'Cigar of the Year' in 2015, this blend is a tribute to Don Pepin's father. It is rich, dark, and wonderfully spicy.",
+    "tags": [
+      "Full",
+      "Nicaraguan",
+      "Iconic"
+    ],
+    "pairings": [
+      "Espresso Martini",
+      "Sherry-Cask Whisky"
+    ],
+    "image_url": "https://myfathercigars.com/wp-content/uploads/2024/07/MY-FATHER-LE-BIJOU-1922.jpg"
+  },
+  {
+    "id": "fs-12",
+    "name": "Montecristo No. 2",
+    "brand": "Montecristo",
+    "origin": "Cuba",
+    "wrapper": "Habano",
+    "strength": "Medium-Full",
+    "size": "6.12 x 52",
+    "rating": 96,
+    "price": "$45.00",
+    "notes": "Classic earthy profile with wood, spice, and a creamy finish.",
+    "description": "Perhaps the most famous torpedo in the world. Montecristo No. 2 defines the classic Cuban flavor profile for many enthusiasts.",
+    "tags": [
+      "Cuban",
+      "Iconic",
+      "Premium"
+    ],
+    "pairings": [
+      "Cognac",
+      "Black Coffee"
+    ],
+    "image_url": "https://images.famous-smoke.com/image/upload/c_lpad,dpr_2.0,f_auto,h_300,q_auto,w_240/v1/skupics/mon/ci-mon-cl-n2.jpg?_i=AB"
+  },
+  {
+    "id": "fs-13",
+    "name": "Oliva Serie V Melanio Figurado",
+    "brand": "Oliva",
+    "origin": "Nicaragua",
+    "wrapper": "Sumatra",
+    "strength": "Full",
+    "size": "6.5 x 52",
+    "rating": 96,
+    "price": "$16.00",
+    "notes": "Leather, coffee, and caramel with a smooth pepper finish.",
+    "description": "Handcrafted using expertly fermented ligero fillers. The Melanio is celebrated for its incredible balance and smooth transitions.",
+    "tags": [
+      "Award-Winning",
+      "Full",
+      "Premium"
+    ],
+    "pairings": [
+      "Aged Rum",
+      "Dark Ale"
+    ],
+    "image_url": "/assets/premium/oliva_melanio.png"
+  },
+  {
+    "id": "fs-14",
+    "name": "Davidoff Grand Cru No. 2",
+    "brand": "Davidoff",
+    "origin": "Dominican Republic",
+    "wrapper": "Ecuadorian Connecticut",
+    "strength": "Mild-Medium",
+    "size": "5.62 x 43",
+    "rating": 92,
+    "price": "$28.00",
+    "notes": "Floral, nutty, and refined with a clean, woodsy finish.",
+    "description": "The Grand Cru series is inspired by Zino Davidoff's love for fine wines. It is sophisticated, clean, and perfectly constructive.",
+    "tags": [
+      "Ultra-Premium",
+      "Mild",
+      "Dominican"
+    ],
+    "pairings": [
+      "White Wine",
+      "Green Tea"
+    ],
+    "image_url": "https://cigarclubindia.com/wp-content/uploads/2023/10/DavidoffGrandCruNo2.webp"
+  },
+  {
+    "id": "fs-15",
+    "name": "Pardon 1926 Series No. 9 Maduro",
+    "brand": "Padron",
+    "origin": "Nicaragua",
+    "wrapper": "Nicaraguan Maduro",
+    "strength": "Full",
+    "size": "5.25 x 56",
+    "rating": 97,
+    "price": "$22.00",
+    "notes": "Deep dark chocolate, espresso, and spicy black pepper.",
+    "description": "Released to celebrate Jose Padron's 75th birthday. Each cigar is aged 5 years to ensure a smooth but incredibly rich smoke.",
+    "tags": [
+      "Full",
+      "Nicaraguan",
+      "Maduro"
+    ],
+    "pairings": [
+      "Stout",
+      "Strong Espresso"
+    ],
+    "image_url": "https://littlecigarbox.com/cdn/shop/products/PADRON1926NO9_grande.jpg?v=1619906281"
+  }
+]
